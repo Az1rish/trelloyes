@@ -3,17 +3,23 @@ import Card from './Card';
 import STORE from '../store';
 
 function List(props) {
-    const listArr = STORE.lists;
-   
-    const keyNum = listArr.map((_, i) =>
-    <Card key ={listArr[i].id} />
-    );
-
-    console.log(props);
-    return (
+    const arrayOfCard = STORE.allCards.map((card) =>
+        <Card title={card.title} content={card.content} />
+    )
+    const arrayOfLis = STORE.lists.map((list) =>
+    <section className="List" key={list.id}>
+        <header className="List-header">
+            <h2>{list.header}</h2>
+        </header>
         <div className="List-cards">
-            <Card />
-        </div>   
+            {arrayOfCard}
+        </div>
+    </section>
+  )
+    return (
+        <div className="App-list">
+            {arrayOfLis}   
+        </div> 
     )
 }
 
