@@ -1,15 +1,17 @@
 import React from 'react';
-import Card from './composition/Card';
 import List from './composition/List';
-
+import STORE from './store';
 
 function App() {
+  const listArr = STORE.lists;
+  /* const title = listArr.map((_, i) => 
+    <h2 key={listArr[i].id}>{listArr[i].header}</h2>
+    )*/
+    
   return (
     <main className="App">
-      <header>
-        <h1>
-
-        </h1>
+      <header className="App-header">
+        <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
         <List />
@@ -19,3 +21,4 @@ function App() {
 }
 
 export default App;
+
