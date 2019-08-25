@@ -7,7 +7,7 @@ function App() {
   const listNum = listArr.map((_, i) => 
     <List key={listArr[i].id} />
     )
-    
+  
   return (
     <main className="App">
       <header className="App-header">
