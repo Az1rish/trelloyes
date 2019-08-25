@@ -7,6 +7,9 @@ function List(props) {
     const title = listArr.map((_, i) => 
     <h2 key={listArr[i].id}>{listArr[i].header}</h2>
     );
+    const keyNum = listArr.map((_, i) =>
+    <Card key ={listArr[i].id} />
+    )
     console.log(props);
     return (
         <section className="List">
@@ -14,7 +17,7 @@ function List(props) {
                 {title}
             </header>
             <div className="List-cards">
-                <Card />
+                {keyNum}
             </div>
         </section>
     );

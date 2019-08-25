@@ -1,6 +1,9 @@
 import React from 'react';
+import STORE from '../store';
 
 function Card(props) {
+    console.log(props);
+
     return (
         <div className="Card">
             <h3>{props.title}</h3>
