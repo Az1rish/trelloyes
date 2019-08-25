@@ -3,7 +3,7 @@ import Card from './Card';
 import STORE from '../store';
 
 function List(props) {
-    const arrayOfCard = STORE.allCards.map((card) =>
+    const arrayOfCard = Object.keys(STORE.allCards).map((card) =>
         <Card title={card.title} content={card.content} />
     )
     const arrayOfLis = STORE.lists.map((list) =>
