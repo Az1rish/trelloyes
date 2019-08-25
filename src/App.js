@@ -4,9 +4,16 @@ import STORE from './store';
 
 function App() {
   const listArr = STORE.lists;
-  const listNum = listArr.map((_, i) => 
-    <List key={listArr[i].id} />
-    )
+  const title = listArr.map((_, i) =>
+    <section className="List" key={listArr[i].id}>
+      <div className="List-cards">
+        <header className="List-header">
+          <h2>{listArr[i].header}</h2>
+          <List />
+        </header>
+      </div>
+    </section>
+  )
   
   return (
     <main className="App">
@@ -14,7 +21,7 @@ function App() {
         <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
-        {listNum}
+        {title}   
       </div>
     </main>
   );
