@@ -11,8 +11,9 @@ describe('Card component', () => {
     });
 
     it('renders the UI as expected', () => {
+        const cards = [ {id: 'l', title: 'm', content: 'content'} ];
         const tree = renderer
-            .create(<List key="Key" header="Title" cards="Content" />)
+            .create(<List key="Key" header="Title" cards={cards} />)
             .toJSON();
         expect(tree).toMatchSnapshot();
     });
