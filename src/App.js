@@ -2,13 +2,15 @@ import React, { Component} from 'react';
 import List from './composition/List';
 import './App.css'
 
-class App extends Component {
-  static defaultProps = {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
     store: {
       lists: [],
       allCards: {},
-    }
-  };
+    };
+  }
 
   render() {
     const {store} = this.props
@@ -32,5 +34,3 @@ class App extends Component {
     );
   } 
 }
-
-export default App;
