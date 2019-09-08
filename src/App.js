@@ -22,7 +22,7 @@ export default class App extends Component {
   }
 
   render() {
-    const {store} = this.props
+    const {store} = this.state
     return (
       <main className="App">
         <header className="App-header">
@@ -36,6 +36,8 @@ export default class App extends Component {
               cards={list.cardIds.map(id =>
                 store.allCards[id]
                 )}
+              onDeleteCard={this.handleDeleteCard}
+              onRandomCard={this.handleRandomCard}
             />
           ))}
         </div>
