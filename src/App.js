@@ -1,15 +1,13 @@
 import React, { Component} from 'react';
 import List from './composition/List';
-import './App.css'
+import './App.css';
+import STORE from './store';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      store: {
-        lists: [],
-        allCards: {},
-      },
+      store: STORE,
     }
   }
 
@@ -29,7 +27,7 @@ export default class App extends Component {
           <h1>Trelloyes!</h1>
         </header>
         <div className="App-list">
-          {store.lists.map(list => (
+          {this.state.store.lists.map(list => (
             <List
               key={list.id}
               header={list.header}
