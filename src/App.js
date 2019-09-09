@@ -11,13 +11,13 @@ export default class App extends Component {
     }
   }
 
-  handleDeleteCard() {
-    console.log('handle delete card called')
+  handleDeleteCard(card) {
+    console.log('handle delete card called', { card })
   }
 
-  handleRandomCard() {
-    console.log('handle random card called')
-  }
+  handleRandomCard(card) {
+    console.log('handle random card called', { card })
+  } 
 
   render() {
     const {store} = this.state
