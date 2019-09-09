@@ -15,8 +15,8 @@ export default class App extends Component {
     console.log('handle delete card called', { card })
   }
 
-  handleRandomCard(card) {
-    console.log('handle random card called', { card })
+  handleRandomCard(list) {
+    console.log('handle random card called', { list })
   } 
 
   render() {
@@ -30,6 +30,7 @@ export default class App extends Component {
           {this.state.store.lists.map(list => (
             <List
               key={list.id}
+              id={list.id}
               header={list.header}
               cards={list.cardIds.map(id =>
                 store.allCards[id]
